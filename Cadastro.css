@@ -1,0 +1,302 @@
+/* Manter hover ativo mesmo quando desabilitado */
+button.btn:disabled:hover {
+  background-color: #000000; /* Cor do fundo ao passar o mouse, mesma cor quando desativado */
+  color: #fff; /* Manter a cor do texto ao passar o mouse */
+}
+
+button.btn {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem; /* ajuste a altura conforme necessário */
+  line-height: 1; /* assegura que o line-height não interfere */
+}
+
+button.btn span {
+  font-size: 15px;
+}
+
+
+button.btn:not(:disabled):hover {
+  background-color: #074f97; /* Cor ao passar o mouse quando habilitado */
+}
+
+button.btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+
+/* Estilos Gerais */
+#subscribe {
+  padding: 3rem 0;
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Seção de Texto */
+#subscribe .text {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+#subscribe h4 {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+#subscribe h4 img {
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+#subscribe p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+
+section#subscribe .text p, section#event .text p {
+  font-size: 1.7em;
+  line-height: 1.3em;
+  margin-bottom: 0.5rem;
+}
+
+#subscribe .linkedin {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+#subscribe .linkedin img {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Formulário */
+#subscribe .form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Espaçamento entre colunas */
+  margin-bottom: 1rem;
+  font-size: 0em;
+}
+
+#subscribe .col-md-6 {
+  flex: 1 0 calc(50% - 0.75rem); /* Ajuste de largura das colunas com espaço entre elas */
+  padding: 0.75rem;
+}
+
+#subscribe .form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+#subscribe .form-control:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007bff;
+}
+
+.is-invalid {
+  border-color: #dc3545;
+}
+
+.invalid-feedback {
+  display: block;
+  margin-top: 0.5rem;
+  color: #dc3545;
+}
+
+#subscribe .btn {
+  background-color: #000000 !important;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0rem 2rem; /* Ajuste o padding conforme necessário */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-top: 1rem; /* Espaçamento superior para evitar sobreposição */
+}
+
+#subscribe .btn:hover {
+  background-color: #2e3338;
+}
+  
+/* Ajuste específico para reCAPTCHA */
+#subscribe .g-recaptcha {
+  margin-top: 1rem; /* Espaçamento superior para evitar sobreposição com o botão */
+}
+
+/* Media Queries (Opcional) */
+@media (max-width: 768px) {
+  #subscribe .col-md-6 {
+    flex: 1 0 100%; /* Largura total em telas menores */
+  }
+}
+
+section#subscribe,
+section#event {
+  padding: 3% 61px;
+  margin-bottom: 2.5rem;
+  background-color: #D6D6D6;
+}
+
+.custom-captcha {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 0px;
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 40em;
+}
+
+section#subscribe .form-row:last-child > div,
+section#event .form-row:last-child > div {
+  margin-bottom: 0;
+  width: 50%;
+}
+
+.captcha-checkbox {
+  width: 26px;
+  height: 26px;
+  border: 3px solid #dbdbdb;
+  margin-right: 21px;
+  position: relative;
+}
+
+.captcha-checkbox.checked::after {
+  content: "✓";
+  font-size: 50px;
+  color: green;
+  position: absolute;
+  top: -10%;
+  left: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.captcha-text {
+  font-size: 14px;
+}
+
+.captcha-text.initial {
+  color: rgb(29, 8, 8);
+  margin-left: -11px;
+}
+
+.captcha-text.verifying {
+  color: rgb(48, 1, 1);
+  animation: showVerificationText 4s linear;
+}
+
+.captcha-text.verified {
+  color: rgb(0, 218, 0);
+  margin-left: -11px;
+}
+
+@keyframes showVerificationText {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.captcha-icon {
+  vertical-align: middle;
+  width: 66px;
+  margin-left: 4px;
+}
+
+section#subscribe .notice,
+section#event .notice {
+  font-size: 1.1em;
+  margin-bottom: 1rem !important;
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 767px) {
+  #subscribe .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  #subscribe .col-md-6 {
+    flex: 1 0 100%;
+    padding: 0;
+  }
+
+  #subscribe .text {
+    margin-bottom: 2rem;
+  }
+
+  #subscribe h4 {
+    font-size: 2rem;
+  }
+
+  #subscribe p {
+    font-size: 1rem;
+  }
+
+  #subscribe .linkedin img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .custom-captcha {
+    margin-right: 0;
+  }
+
+  section#subscribe .form-row:last-child > div,
+  section#event .form-row:last-child > div {
+    width: 100%;
+  }
+}
+
+/* Media Queries para tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  #subscribe .form-row {
+    gap: 1rem;
+  }
+
+  #subscribe .col-md-6 {
+    flex: 1 0 calc(50% - 0.5rem);
+    padding: 0.5rem;
+  }
+
+  #subscribe h4 {
+    font-size: 2.2rem;
+  }
+
+  #subscribe p {
+    font-size: 1.1rem;
+  }
+
+  .custom-captcha {
+    margin-right: 2rem;
+  }
+}
+
+/* Media Queries para iPad Pro */
+@media (min-width: 1024px) and (max-width: 1366px) {
+  #subscribe .form-row {
+    gap: 1rem;
+  }
+
+  #subscribe .col-md-6 {
+    flex: 1 0 calc(50% - 0.5rem);
+    padding: 0.5rem;
+  }
+}
